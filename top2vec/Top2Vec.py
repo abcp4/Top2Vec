@@ -314,7 +314,7 @@ class Top2Vec:
             #self.model = Doc2Vec(**doc2vec_args)
             self.model = Doc2Vec.load('d2v')
             print('loaded d2v model!! Now training!')
-            self.model.train(train_corpus)
+            self.model.train(train_corpus,total_examples=len(documents))
             
 
             if use_corpus_file:
