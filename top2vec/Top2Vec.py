@@ -260,7 +260,7 @@ class Top2Vec:
             if speed == "fast-learn":
                 hs = 0
                 negative = 5
-                epochs = 5
+                epochs = 10
             elif speed == "learn":
                 hs = 1
                 negative = 0
@@ -313,7 +313,9 @@ class Top2Vec:
             self.embedding_model = 'doc2vec'
             #self.model = Doc2Vec(**doc2vec_args)
             self.model = Doc2Vec.load('d2v')
-            print('loaded d2v model!!')
+            print('loaded d2v model!! Now training!')
+            self.model.train(train_corpus)
+            
 
             if use_corpus_file:
                 temp.close()
