@@ -247,7 +247,7 @@ class Top2Vec:
             if speed == "fast-learn":
                 hs = 0
                 negative = 5
-                epochs = 40
+                epochs = 5
             elif speed == "learn":
                 hs = 1
                 negative = 0
