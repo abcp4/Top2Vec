@@ -298,7 +298,8 @@ class Top2Vec:
 
             logger.info('Creating joint document/word embedding')
             self.embedding_model = 'doc2vec'
-            self.model = Doc2Vec(**doc2vec_args)
+            #self.model = Doc2Vec(**doc2vec_args)
+            self.model = Doc2Vec.load('d2v')
 
             if use_corpus_file:
                 temp.close()
