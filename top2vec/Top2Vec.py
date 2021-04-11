@@ -311,10 +311,10 @@ class Top2Vec:
 
             logger.info('Creating joint document/word embedding')
             self.embedding_model = 'doc2vec'
-            #self.model = Doc2Vec(**doc2vec_args)
-            self.model = Doc2Vec.load('d2v')
-            print('loaded d2v model!! Now training!')
-            self.model.train(train_corpus,total_examples=len(documents),epochs=1)
+            self.model = Doc2Vec(**doc2vec_args)
+            #self.model = Doc2Vec.load('d2v')
+            #print('loaded d2v model!! Now training!')
+            #self.model.train(train_corpus,total_examples=len(documents),epochs=1)
             
 
             if use_corpus_file:
