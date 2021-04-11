@@ -300,6 +300,7 @@ class Top2Vec:
             self.embedding_model = 'doc2vec'
             #self.model = Doc2Vec(**doc2vec_args)
             self.model = Doc2Vec.load('d2v')
+            print('loaded d2v model!!')
 
             if use_corpus_file:
                 temp.close()
