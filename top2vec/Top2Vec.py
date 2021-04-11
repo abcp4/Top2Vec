@@ -188,6 +188,8 @@ class Top2Vec:
                  hdbscan_args=None,
                  verbose=True
                  ):
+        
+        print('init!!')
 
         if verbose:
             logger.setLevel(logging.DEBUG)
