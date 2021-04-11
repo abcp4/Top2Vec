@@ -52,6 +52,17 @@ def default_tokenizer(doc):
     """Tokenize documents for training and remove too long/short words"""
     return simple_preprocess(strip_tags(doc), deacc=True)
 
+from gensim.models.callbacks import CallbackAny2Vec
+
+class EpochSaver(CallbackAny2Vec):
+    def __init__(self, path_prefix):
+        self.path_prefix = path_prefix
+        self.epoch = 0
+    def on_epoch_end(self, model):
+        output_path = 'temp_model_'+str(self.epoch)
+        model.save(output_path)
+        self.epoch += 1
+
 
 class Top2Vec:
     """
